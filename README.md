@@ -5,6 +5,8 @@ Welcome to the Time-Service repo. The repository hosts a demo microservice which
 
 ### Prerequisites
 - Python 2.7
+- requires a running config server (you can use mine)
+- Download and run locally this  [server](https://github.com/billatr0n/Cloud_Config_Server_Local) and fire it up using STS. It points to my [git config repo](https://github.com/billatr0n/microservices-cloud-config)
 
 ### Instructions
 - download the code in a directory you like
