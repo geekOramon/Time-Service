@@ -13,14 +13,14 @@ Welcome to the Time-Service repo. The repository hosts a demo microservice which
 - install required pips  
 ```bash
 pip install virtualenv
-cd ~/directoryOfTheProject
-virtualenv ~/directoryOfTheProject
-source bin/activate
-```
-```bash
 pip install flask
 pip install requests
 pip install yaml
+```
+```bash
+cd ~/directoryOfTheProject
+virtualenv ~/directoryOfTheProject
+source bin/activate
 ```
 Once this is done we have everything needed to start up the server.
 ```bash
