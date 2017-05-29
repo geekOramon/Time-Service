@@ -12,21 +12,23 @@ Welcome to the Time-Service repo. The repository hosts a demo microservice which
 - download the code in a directory you like
 - install required pips  
 ```bash
-pip install flask
 pip install virtualenv
+cd ~/directoryOfTheProject
+virtualenv ~/directoryOfTheProject
+source bin/activate
+```
+```bash
+pip install flask
 pip install requests
+pip install yaml
 ```
 Once this is done we have everything needed to start up the server.
 ```bash
-cd ~/{directory where you download the service}
-cd venv/Scripts
-./activate
-#Use export if you are running on linux.
-set CONFIG_SERVER_URL=http://localhost:8888 
-set CONFIG_SERVER_BRANCH=master
-set SERVICE_NAME=time
-set FORMAT_PATTERN=FORMAT
-set FLASK_APP=../../TimeService.py
+export CONFIG_SERVER_URL=http://localhost:8888 
+export CONFIG_SERVER_BRANCH=master
+export SERVICE_NAME=time
+export FORMAT_PATTERN=FORMAT
+export FLASK_APP=TimeService.py
 flask run
 ```
 If your service starts up properly you will see something like this 
