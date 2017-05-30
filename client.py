@@ -6,5 +6,5 @@ import yaml
 
 def perform_request_to_config_server(config_server_url, microservice, environment, branch, uname, upass):
     r = requests.get(
-        'http://' + uname + ':' + upass + '@' + config_server_url + '/' + microservice + '/dev/' + branch + '/' + microservice + '-' + environment + '.yml')
+        'http://' + uname + ':' + upass + '@' + config_server_url + '/' + microservice + '-' + environment + '.yml')
     return yaml.load(r.text)
