@@ -14,6 +14,8 @@ url = os.environ.get('CONFIG_SERVER_URL')
 service = os.environ.get('SERVICE_NAME')
 branch = os.environ.get('CONFIG_SERVER_BRANCH')
 formatter = os.environ.get('FORMAT_PATTERN')
+uname = os.environ.get('CONFIG_SERVER_USERNAME')
+upass = os.environ.get('CONFIG_SERVER_PASSWORD')
 
 
 def call_client(env):
@@ -25,7 +27,7 @@ def call_client(env):
     """
     global my_date_format
     if my_date_format == "":
-        my_date_format = load_config(url, service, env, branch)[formatter]
+        my_date_format = load_config(url, service, env, branch, uname, upass)[formatter]
         return my_date_format
     elif my_date_format != "":
         return my_date_format
@@ -40,15 +42,14 @@ def refresh_client(env):
         """
     global my_date_format
     if my_date_format != "":
-        my_date_format = load_config(url, service, env, branch)[formatter]
+        my_date_format = load_config(url, service, env, branch, uname, upass)[formatter]
 
 
 @app.route('/time/<env>')
 def time(env):
     """"Retrieve The time"""
     my_format = call_client(env)
-    resp = make_response("The Date is : " + str(
-        datetime.datetime.now().strftime(my_format)))
+    resp = make_response("The Date is : " + str(datetime.datetime.now().strftime(my_format)))
     return resp
 
 
@@ -73,3 +74,7 @@ def shutdown_server():
     if func is None:
         raise RuntimeError('Not running with the Werkzeug Server')
     func()
+
+
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0')
