@@ -22,7 +22,7 @@ upass = os.environ.get('CONFIG_SERVER_PASSWORD')
 def call_client(environment):
     """"call this method to retrieve the formatter from the CONFIG_SERVER for the requested environment
     
-    :argument env = the environment you want to fetch
+    :argument environment = the environment you want to fetch
        
     :return a list of configurations fetched from the repo    
     """
@@ -37,7 +37,7 @@ def call_client(environment):
 def refresh_client(environment):
     """"call to refresh the formatter from the CONFIG_SERVER for the requested environment
 
-        :argument env = the environment you want to fetch
+        :argument environment = the environment you want to fetch
 
         :return a list of configurations fetched from the repo    
         """
