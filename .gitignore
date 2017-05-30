@@ -34,6 +34,8 @@ wheels/
 *.manifest
 *.spec
 
+#loc
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
@@ -89,6 +91,10 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
+bin/
+include/
+local/
+pip-selfcheck.json
 
 # Spyder project settings
 .spyderproject
