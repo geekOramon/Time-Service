@@ -23,11 +23,13 @@ source bin/activate
 #You should see something like this
 (Time-Service) vasilis@vasilis-work:~/Projects/STS_WORKSPACE/Time-Service(master)
 #We need now to setup some environment variables inside the virtual environment subsystem
-export SERVICE_NAME=time-service-config
-export CONFIG_SERVER_PASSWORD=kaiokentimesten
-export CONFIG_SERVER_USERNAME=time-service-config-develop
-export FORMAT_PATTERN=FORMAT
-export SERVICE_ENV=qa
+export SERVICE_NAME='time-service-config'
+export CONFIG_SERVER_URL='localhost:8888'
+export CONFIG_SERVER_USERNAME='time-service-config-developer'
+export CONFIG_SERVER_PASSWORD='kaiokentimesten'
+export FORMAT_PATTERN='FORMAT'
+export CONFIG_SERVER_BRANCH='master'
+export SERVICE_ENV='qa'
 export FLASK_APP=TimeService.py
 #Now startup the flask app
 flask run
@@ -44,8 +46,9 @@ If your service starts up properly you will see something like this
 cd ~/directoryOfTheProject
 # use sudo for docker if you can't see a live docker daemon
 docker build -t name:time-service -f ./docker/Dockerfile .
-docker run --net="host" -e CONFIG_SERVER_USERNAME='time-service-config-developer' -e SERVICE_ENV='qa' -e CONFIG_SERVER_PASSWORD='kaiokenen' -e CONFIG_SERVER_URL='localhost:8888' -e CONFIG_SERVER_BRANCH=master -e SERVICE_NAME='time-service-config' -e FORMAT_PATTERN=FORMAT name:time-service
-
+sudo docker run --net="host" -e CONFIG_SERVER_USERNAME='time-service-config-developer' -e SERVICE_ENV='qa' -e CONFIG_SERVER_PASSWORD='kaiokentimesten' -e CONFIG_SERVER_URL='localhost:8888' -e CONFIG_SERVER_BRANCH=master -e SERVICE_NAME='time-service-config' -e FORMAT_PATTERN='FORMAT' -p 5000:5000 springio/time-service
+#OR for the dev environment
+sudo docker run --net="host" -e CONFIG_SERVER_USERNAME='time-service-config-developer' -e SERVICE_ENV='dev' -e CONFIG_SERVER_PASSWORD='kaiokentimesten' -e CONFIG_SERVER_URL='localhost:8888' -e CONFIG_SERVER_BRANCH=master -e SERVICE_NAME='time-service-config' -e FORMAT_PATTERN='FORMAT' -p 5000:5000 springio/time-service
 ```
 If your service starts up properly you will see something like this 
 ``` 
