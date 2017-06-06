@@ -6,7 +6,7 @@ Welcome to the Time-Service repo. The repository hosts a demo microservice which
 ### Prerequisites
 - Python 2.7
 - requires a running config server (you can use mine)
-- Download and run locally this  [server](https://github.com/billatr0n/Cloud_Config_Server_Local) and fire it up using STS. It points to my [git config repo](https://github.com/billatr0n/microservices-cloud-config)
+- Download and run locally this  [server](https://github.com/geekOramon/configuration-service) and fire it up using the instuctions on the repository. It points to these repos defined in the server  [git config repo](https://github.com/geekOramon/time-service-config-dev)
 
 ### Instructions for running with virtualenv 
 - download the code in a directory you like
